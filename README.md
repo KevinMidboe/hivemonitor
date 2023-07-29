@@ -29,7 +29,7 @@ cp .env.example .env
 Using docker:
 
 ```bash
-docker run -p 8080:8080 ghcr.io/KevinMidboe/hivemonitor:latest
+docker run -d -p 8080:8080 --name hivemonitor ghcr.io/kevinmidboe/hivemonitor
 ```
 
 # Setup
