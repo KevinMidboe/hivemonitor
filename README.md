@@ -2,6 +2,15 @@
 
 Hive monitor is a frontend for displaying data from MQTT server receiving events from bee hives. The complementary project [hivemonitor-ESP32-firmware]() reads sensor values and publishes on MQTT topic.
 
+## Preview
+[Preview site](https://hive.schleppe.cloud)
+
+Site previews:
+<div>
+<img width="1502" alt="Site preview of 4 pages" src="https://github.com/KevinMidboe/hivemonitor/assets/2287769/449dfd27-5560-431f-a7d6-75a1d031a328">
+
+</div>
+
 # Requirements
 
 This sveltekit project requires Node.js and yarn installed:
