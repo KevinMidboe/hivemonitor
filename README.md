@@ -6,10 +6,7 @@ Hive monitor is a frontend for displaying data from MQTT server receiving events
 [Preview site](https://hive.schleppe.cloud)
 
 Site previews:
-<div>
-<img width="1502" alt="Site preview of 4 pages" src="https://github.com/KevinMidboe/hivemonitor/assets/2287769/449dfd27-5560-431f-a7d6-75a1d031a328">
-
-</div>
+<img width="1502" alt="Untitled2" src="https://github.com/KevinMidboe/hivemonitor/assets/2287769/d098219e-f099-4885-ad6e-8c08c43de67e">
 
 # Requirements
 
