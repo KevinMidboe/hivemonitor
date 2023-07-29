@@ -17,3 +17,6 @@ WORKDIR /app
 
 COPY --from=builder /app/build .
 COPY ./nginx.conf /etc/nginx/nginx.conf
+
+LABEL org.opencontainers.image.source=https://github.com/kevinmidboe/hivemonitor
+LABEL org.opencontainers.image.license=MIT
