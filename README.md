@@ -22,6 +22,7 @@ Set `PUBLIC_MQTT_BROKER_WS_URL` environment variable for MQTT broker. Since brow
 cp .env.example .env
 
 # edit .env in favorite text editor
+# PUBLIC_MQTT_BROKER_WS_URL=ws://test.mosquitto.org
 ```
 
 # Run
