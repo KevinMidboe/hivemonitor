@@ -2,11 +2,14 @@
 
 Hive monitor is a frontend for displaying data from MQTT server receiving events from bee hives. The complementary project [hivemonitor-ESP32-firmware]() reads sensor values and publishes on MQTT topic.
 
+Complemetary hivemonitor repositories:
+- [Hive monitor ESP32 Firmware](https://github.com/kevinmidboe/hivemonitor-esp32-firmware)
+- [Hive monitor ESP32 PCB design](https://github.com/kevinmidboe/hivemonitor-pcb)
+
 ## Preview
 [Preview site](https://hive.schleppe.cloud)
 
-Site previews:
-<img width="1502" alt="Untitled2" src="https://github.com/KevinMidboe/hivemonitor/assets/2287769/d098219e-f099-4885-ad6e-8c08c43de67e">
+![Hive monitor site, 4 pages](https://github.com/KevinMidboe/hivemonitor/assets/2287769/7fdb3f1c-3f2b-4e1f-b8c8-290b7e6d1d2b)
 
 # Requirements
 
