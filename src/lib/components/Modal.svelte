@@ -56,9 +56,8 @@
 		top: 0;
 		left: 100vw;
 		background-color: var(--background);
-		height: 100vh;
-		height: -webkit-fill-available;
-		width: calc(100vw - 2rem);
+		height: 0;
+		width: 0px;
 		transition: left 400ms ease;
 		padding: 0 1rem;
 		overflow-y: scroll;
@@ -66,6 +65,9 @@
 		&.open {
 			position: fixed;
 			left: 0;
+			height: 100vh;
+			height: -webkit-fill-available;
+			width: calc(100vw - 2rem);
 		}
 	}
 </style>

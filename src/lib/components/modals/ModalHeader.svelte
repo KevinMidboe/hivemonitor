@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { resetModal } from '$lib/store';
-	import ArrowLeft from '$lib/icons/ArrowLeft.svelte';
+	import Close from '$lib/icons/Close.svelte';
 
 	export let title: string;
 	export let subtitle: string;
@@ -40,7 +40,7 @@
 
 <div class="top">
 	<button class="back" on:click={resetModal} aria-label="Close">
-		<ArrowLeft fill="var(--color)" />
+		<Close />
 	</button>
 	<span id="header-title" bind:this={headerTitleEl}>{title}</span>
 </div>
