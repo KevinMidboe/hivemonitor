@@ -56,13 +56,9 @@
 		padding: 1rem;
 		border-radius: 1rem;
 		background-color: var(--highlight);
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
 
 		@media only screen and (min-width: 768px) {
 			justify-content: space-between;
-			max-width: 600px;
 		}
 
 		p {
@@ -87,6 +83,7 @@
 
 	.day {
 		background-color: #ffffff30;
+		background-color: var(--highlight);
 		border-radius: 50%;
 	}
 	.day span {

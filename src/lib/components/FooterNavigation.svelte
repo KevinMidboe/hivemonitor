@@ -43,12 +43,17 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			width: 100%;
 			cursor: pointer;
 			padding: 0.6rem 0.5rem 0.2rem;
 			color: var(--color);
 			font-size: 0.8rem;
 			transition: all 200ms ease;
 			will-change: font-weight;
+
+			&:hover {
+				background-color: var(--background-60);
+			}
 
 			.icon {
 				width: 20px;

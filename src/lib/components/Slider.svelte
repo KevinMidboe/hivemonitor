@@ -28,7 +28,6 @@
 	.slider-container {
 		border-radius: 1rem;
 		background-color: var(--highlight);
-		width: min-content;
 		padding: 1rem;
 
 		p {
@@ -42,23 +41,22 @@
 		position: relative;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		max-width: 800px;
 
 		div {
-			min-width: 200px;
+			width: 100%;
 			height: 2rem;
 		}
 
 		div:nth-of-type(1) {
-			background-color: #23C45E;
+			background-color: #23C45E; // green
 			border-top-left-radius: 0.5rem;
 			border-bottom-left-radius: 0.5rem;
 		}
 		div:nth-of-type(2) {
-			background-color: #E8B306;
+			background-color: #E8B306; // yellow
 		}
 		div:nth-of-type(3) {
-			background-color: #EE4443;
+			background-color: #EE4443; // red
 			border-top-right-radius: 0.5rem;
 			border-bottom-right-radius: 0.5rem;
 		}
@@ -70,7 +68,7 @@
 			margin-top: 0.5rem;
 			width: 0.8rem;
 			border-radius: 0.5rem;
-			background-color: whitesmoke;
+			background-color: var(--color);
 		}
 	}
 </style>

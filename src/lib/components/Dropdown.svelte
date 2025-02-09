@@ -54,10 +54,13 @@
 		margin: 1rem 0;
 	}
 	.trigger {
-		background: #222;
-		color: white;
+		background-color: var(--color);
+		color: var(--background);
+		background-color: var(--highlight);
+		color: var(--color);
 		padding: 10px 15px;
 		border: none;
+		border: 2px solid var(--color);
 		border-radius: 6px;
 		cursor: pointer;
 		display: flex;
@@ -72,8 +75,8 @@
 		position: absolute;
 		top: 100%;
 		left: 0;
-		background: #111;
-		color: white;
+		background: var(--background);
+		color: var(--color);
 		border-radius: 6px;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 		width: 150px;
@@ -89,7 +92,10 @@
 		padding: 10px;
 		cursor: pointer;
 	}
-	.menu li span:hover {
+	.menu li span:hover,
+	.menu li span:active {
 		background: #333;
+		background: var(--color);
+		color: var(--background);
 	}
 </style>

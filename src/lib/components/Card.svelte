@@ -128,8 +128,8 @@
 			}
 
 			.metric .icon {
-				max-width: 22px;
-				height: 22px;
+				max-width: 28px;
+				height: 28px;
 				margin-right: 0.25rem;
 			}
 		}
