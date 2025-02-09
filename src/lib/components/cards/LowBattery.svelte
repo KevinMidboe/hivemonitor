@@ -3,7 +3,7 @@
 	import BatteryLowIcon from '$lib/icons/batteryLow.svelte';
 
 	export let battery: number | string;
-	export let borderLess: boolean = false;
+	export let borderLess = false;
 </script>
 
 <!-- <Card title="Low battery" iconBackground="#FF6B00" {borderLess}> -->

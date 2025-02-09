@@ -4,8 +4,8 @@
 	export let title = '';
 	export let iconBackground = 'var(--background)';
 
-	export let opens: any = null;
-	export let data: any = {};
+	export let opens: any = null; // eslint-disable-line
+	export let data: any = {}; // eslint-disable-line
 	export let borderLess = false;
 
 	function openModal() {

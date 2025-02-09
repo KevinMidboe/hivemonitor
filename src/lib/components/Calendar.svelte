@@ -44,13 +44,14 @@
 <div class="calendar-container">
 	<p>{monthString}</p>
 	<div class="calendar">
+		<!-- eslint-disable-next-line -->
 		{#each Array(firstDay).fill(null) as _}
 			<div class="empty" />
 		{/each}
 
 		{#each Array(daysInMonth)
 			.fill(0)
-			.map((_, i) => i + 1) as day}
+			.map((_, i) => i + 1) as _}
 			<div class="day">
 				<span style={`background: ${randomOpacity()}`} />
 			</div>

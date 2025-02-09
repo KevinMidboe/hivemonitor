@@ -5,7 +5,7 @@
 
 	export let title: string;
 	export let subtitle: string;
-	export let icon: any;
+	export let icon: any; // eslint-disable-line
 
 	let bodyTitleEl: HTMLElement;
 	let headerTitleEl: HTMLElement;

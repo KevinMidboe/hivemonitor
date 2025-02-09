@@ -2,8 +2,8 @@
 	import Card from '../Card.svelte';
 	import NetworkDisconnectedIcon from '$lib/icons/networkDisconnected.svelte';
 
-	export let time: String | Number;
-	export let borderLess: boolean = false;
+	export let time: string | number;
+	export let borderLess = false;
 </script>
 
 <Card title="no data" iconBackground="#ECECEC" {borderLess}>

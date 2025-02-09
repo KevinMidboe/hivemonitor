@@ -4,7 +4,7 @@
 
 	export let from: string | number;
 	export let to: string | number;
-	export let borderLess: boolean = false;
+	export let borderLess = false;
 </script>
 
 <Card title="Weight changed" iconBackground="#F6B138" {borderLess}>

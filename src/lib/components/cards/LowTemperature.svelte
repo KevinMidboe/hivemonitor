@@ -3,7 +3,7 @@
 	import ThermometerColdIcon from '$lib/icons/thermometerCold.svelte';
 
 	export let temperature: number | string;
-	export let borderLess: boolean = false;
+	export let borderLess = false;
 </script>
 
 <Card title="low temperature" iconBackground="#05B4EC" {borderLess}>

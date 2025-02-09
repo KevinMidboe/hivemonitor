@@ -52,7 +52,7 @@
 
 <style lang="scss">
 	.modal {
-		position: fixed;
+		position: hidden;
 		top: 0;
 		left: 100vw;
 		background-color: var(--background);
@@ -64,6 +64,7 @@
 		overflow-y: scroll;
 
 		&.open {
+			position: fixed;
 			left: 0;
 		}
 	}

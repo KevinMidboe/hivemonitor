@@ -14,6 +14,4 @@
 	<FooterNavigation />
 </div>
 
-<!--
 <Modal />
--->
