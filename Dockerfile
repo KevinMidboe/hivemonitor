@@ -5,11 +5,12 @@ WORKDIR /app
 COPY package*.json .
 COPY *config* .
 COPY .env .
+COPY yarn.lock .
 COPY src/ src
 COPY static/ static
 
-RUN npm install
-RUN npm run build
+RUN yarn install
+RUN yarn run build
 
 FROM nginx:alpine
 
