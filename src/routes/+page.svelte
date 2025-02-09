@@ -6,13 +6,22 @@
 	import LowBattery from '$lib/components/cards/LowBattery.svelte';
 	import NoData from '$lib/components/cards/NoData.svelte';
 	import WeightChanged from '$lib/components/cards/WeightChanged.svelte';
+	import Graph from '$lib/components/Graph.svelte';
 </script>
 
 <main>
 	<h1>Hive monitor</h1>
 
 	<span class="header">Hives</span>
-	<HiveSummary />
+	<div class="hive-container">
+		<HiveSummary />
+	</div>
+
+	<span class="header">Graphs</span>
+	<div class="graph-container">
+		<Graph />
+		<Graph />
+	</div>
 
 	<span class="header">Gateways</span>
 	<GatewaySummary />
@@ -26,4 +35,24 @@
 </main>
 
 <style lang="scss">
+	.graph-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+
+		@media only screen and (min-width: 768px) {
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		}
+	}
+
+	.hive-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 1rem;
+
+		@media only screen and (min-width: 768px) {
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		}
+	}
 </style>

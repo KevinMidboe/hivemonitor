@@ -4,12 +4,14 @@ WORKDIR /app
 
 COPY package*.json .
 COPY *config* .
-COPY .env .
+COPY yarn.lock .
 COPY src/ src
 COPY static/ static
 
-RUN npm install
-RUN npm run build
+ARG PUBLIC_MQTT_BROKER_WS_URL
+
+RUN yarn install
+RUN yarn run build
 
 FROM nginx:alpine
 

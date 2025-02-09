@@ -4,8 +4,8 @@
 	export let title = '';
 	export let iconBackground = 'var(--background)';
 
-	export let opens: any = null;
-	export let data: any = {};
+	export let opens: any = null; // eslint-disable-line
+	export let data: any = {}; // eslint-disable-line
 	export let borderLess = false;
 
 	function openModal() {
@@ -128,8 +128,8 @@
 			}
 
 			.metric .icon {
-				max-width: 22px;
-				height: 22px;
+				max-width: 28px;
+				height: 28px;
 				margin-right: 0.25rem;
 			}
 		}

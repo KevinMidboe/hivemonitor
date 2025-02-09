@@ -2,7 +2,7 @@
 	export let date: Date;
 
 	function convertDate() {
-		let [_, time] = date.toLocaleString('nb-NO').split(', ');
+		let [_, time] = date.toLocaleString('nb-NO').split(', '); // eslint-disable-line
 		time = time.slice(0, time.length - 3);
 
 		const diffDays = Math.floor((new Date().getTime() - date.getTime()) / 86400000);

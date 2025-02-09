@@ -1,14 +1,13 @@
 <script lang="ts">
-  import Card from "../Card.svelte";
-  import ThermometerHotIcon from "$lib/icons/thermometerHot.svelte";
+	import Card from '../Card.svelte';
+	import ThermometerHotIcon from '$lib/icons/thermometerHot.svelte';
 
-    export let temperature: string | number;
-    export let borderLess: boolean = false;
+	export let temperature: string | number;
+	export let borderLess = false;
 </script>
 
 <Card title="High temperature" iconBackground="#F93131" {borderLess}>
-  <ThermometerHotIcon slot="logo" fill="var(--highlight)" />
+	<ThermometerHotIcon slot="logo" fill="var(--highlight)" />
 
-  <span slot="first-value">Over: { temperature }°C</span>
+	<span slot="first-value">Over: {temperature}°C</span>
 </Card>
-

@@ -1,14 +1,13 @@
 <script lang="ts">
-    import Card from "../Card.svelte";
-    import NetworkDisconnectedIcon from "$lib/icons/networkDisconnected.svelte";
+	import Card from '../Card.svelte';
+	import NetworkDisconnectedIcon from '$lib/icons/networkDisconnected.svelte';
 
-    export let time: String | Number;
-    export let borderLess: boolean = false;
+	export let time: string | number;
+	export let borderLess = false;
 </script>
 
 <Card title="no data" iconBackground="#ECECEC" {borderLess}>
-  <NetworkDisconnectedIcon slot="logo" fill="#213547" />
+	<NetworkDisconnectedIcon slot="logo" fill="#213547" />
 
-  <span slot="first-value">More than: { time } hours</span>
+	<span slot="first-value">More than: {time} hours</span>
 </Card>
-

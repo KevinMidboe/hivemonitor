@@ -31,6 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"chart.js": "^4.4.7",
 		"mqtt": "^5.0.0",
 		"svelte-gestures": "^1.5.2"
 	}

@@ -1,0 +1,105 @@
+---
+kind: pipeline
+type: docker
+name: Build
+
+platform:
+  os: linux
+  arch: amd64
+
+volumes:
+  - name: cache
+    host:
+      path: /tmp/cache
+
+trigger:
+  event:
+    include:
+      - push
+
+steps:
+  - name: Load cached frontend packages
+    image: sinlead/drone-cache:1.0.0
+    settings:
+      action: load
+      key: yarn.lock
+      mount: node_modules
+      prefix: yarn-modules-${DRONE_REPO_NAME}
+    volumes:
+      - name: cache
+        path: /cache
+
+  - name: Frontend install
+    image: node:current-alpine
+    commands:
+      - node -v
+      - yarn --version
+      - yarn
+
+  - name: Cache frontend packages
+    image: sinlead/drone-cache:1.0.0
+    settings:
+      action: save
+      key: yarn.lock
+      mount: node_modules
+      prefix: yarn-modules-${DRONE_REPO_NAME}
+    volumes:
+      - name: cache
+        path: /cache
+
+  - name: Frontend build
+    image: node:current-alpine
+    commands:
+      - yarn build
+
+  - name: Lint project using eslint
+    image: node:current-alpine
+    commands:
+      - yarn lint
+
+---
+kind: pipeline
+type: docker
+name: Publish
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: Publish to ghcr
+    image: plugins/docker
+    environment:
+      PUBLIC_MQTT_BROKER_WS_URL:
+        from_secret: MQTT_BROKER_WS_URL
+    settings:
+      registry: ghcr.io
+      repo: ghcr.io/kevinmidboe/${DRONE_REPO_NAME}
+      dockerfile: Dockerfile
+      username:
+        from_secret: GITHUB_USERNAME
+      password:
+        from_secret: GHCR_UPLOAD_TOKEN
+      build_args:
+        - PUBLIC_MQTT_BROKER_WS_URL=wss://hive.schleppe.cloud/mqtt
+      build_args_from_env:
+        - PUBLIC_MQTT_BROKER_WS_URL
+      tags:
+        - latest
+        - ${DRONE_COMMIT_SHA}
+
+trigger:
+  event:
+    include:
+      - push
+    exclude:
+      - pull_request
+  branch:
+    - main
+
+depends_on:
+  - Build
+
+---
+kind: signature
+hmac: 41d26f0c24afccaea20bfa929d51e7ac8bdaf5ebbc523349ed6934411af026c1
