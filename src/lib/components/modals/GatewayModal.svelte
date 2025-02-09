@@ -36,8 +36,8 @@
 
 	{#if selectedSection === segments[0]}
 		<section class="display">
-			<SyncDisplay date="{telemetry?.t || data?.t }" />
-			<TemperatureDisplay temperature="{telemetry?.temperature}" />
+			<SyncDisplay date={telemetry?.t || data?.t} />
+			<TemperatureDisplay temperature={telemetry?.temperature} />
 		</section>
 
 		<p>

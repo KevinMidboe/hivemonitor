@@ -1,11 +1,6 @@
 <script lang="ts">
-	const currentDate = new Date();
-	const day = currentDate.getDay();
-
-	const weeks = new Array(4);
-	const days = new Array(7);
-
 	const color = '#F6B139';
+	export let offset = 0;
 
 	function randomOpacity() {
 		return `${color}${Math.floor(Math.random() * 100)}`;
@@ -13,41 +8,53 @@
 
 	let today = new Date();
 	let year = today.getFullYear();
-	let month = today.getMonth();
+	let month = today.getMonth() - offset;
 
-	function getDaysInMonth(year, month) {
+	// wrap year
+	if (month < 0) {
+		year = year - 1;
+		month = 12 + month;
+	}
+
+	const months = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December'
+	];
+	const monthString = months[month];
+
+	function getDaysInMonth(year: number, month: number) {
 		return new Date(year, month + 1, 0).getDate();
 	}
 
 	let daysInMonth = getDaysInMonth(year, month);
 	let firstDay = new Date(year, month, 1).getDay() - 1;
+	firstDay = firstDay > 0 ? firstDay : 7 + firstDay;
 </script>
 
 <div class="calendar-container">
-	<div>
-		<p>January</p>
-		<div class="calendar">
-			{#each Array(firstDay).fill(null) as _, i}
-			<div class="empty"></div>
-			{/each} {#each Array(daysInMonth).fill(0).map((_, i) => i + 1) as day}
-			<div class="day">
-				<span style={`background: ${randomOpacity()}`}></span>
-			</div>
-			{/each}
-		</div>
-	</div>
+	<p>{monthString}</p>
+	<div class="calendar">
+		{#each Array(firstDay).fill(null) as _}
+			<div class="empty" />
+		{/each}
 
-	<div>
-		<p>February</p>
-		<div class="calendar">
-			{#each Array(firstDay).fill(null) as _, i}
-			<div class="empty"></div>
-			{/each} {#each Array(daysInMonth).fill(0).map((_, i) => i + 1) as day}
+		{#each Array(daysInMonth)
+			.fill(0)
+			.map((_, i) => i + 1) as day}
 			<div class="day">
-				<span style={`background: ${randomOpacity()}`}></span>
+				<span style={`background: ${randomOpacity()}`} />
 			</div>
-			{/each}
-		</div>
+		{/each}
 	</div>
 </div>
 

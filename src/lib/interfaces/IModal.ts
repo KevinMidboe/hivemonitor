@@ -1,4 +1,4 @@
 export default interface IModal {
-  opens: any
-  data: any
+	opens: any;
+	data: any;
 }

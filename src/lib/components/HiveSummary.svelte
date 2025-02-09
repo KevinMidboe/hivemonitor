@@ -53,4 +53,6 @@
 	</Card>
 {/each}
 
+<!--
 <p style="text-align: right; margin-top: 0">{sinceUpdate} s since last update</p>
+-->

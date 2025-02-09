@@ -2,25 +2,27 @@
 	const percent = Math.floor(Math.random() * 100);
 
 	const health = () => {
-		if (percent > 66) { return 'bad' }
-		else if (percent > 33) { return 'good' }
-		return 'amazing'
-	}
+		if (percent > 66) {
+			return 'bad';
+		} else if (percent > 33) {
+			return 'good';
+		}
+		return 'amazing';
+	};
 </script>
-
 
 <div class="slider-container">
 	<p>
 		<span>Hive health</span>
-		<b>{ health() }</b>
+		<b>{health()}</b>
 	</p>
 
 	<div class="slider">
-		<div></div>
-		<div></div>
-		<div></div>
+		<div />
+		<div />
+		<div />
 
-		<span style={`left: ${percent}%`}></span>
+		<span style={`left: ${percent}%`} />
 	</div>
 </div>
 
@@ -48,15 +50,15 @@
 		}
 
 		div:nth-of-type(1) {
-			background-color: #23C45E; // green
+			background-color: #23c45e; // green
 			border-top-left-radius: 0.5rem;
 			border-bottom-left-radius: 0.5rem;
 		}
 		div:nth-of-type(2) {
-			background-color: #E8B306; // yellow
+			background-color: #e8b306; // yellow
 		}
 		div:nth-of-type(3) {
-			background-color: #EE4443; // red
+			background-color: #ee4443; // red
 			border-top-right-radius: 0.5rem;
 			border-bottom-right-radius: 0.5rem;
 		}

@@ -1,21 +1,20 @@
 <script lang="ts">
-	const dataTypes = ["Temperature", "Pressure", "Weight", "Activity"];
-	const randomOfList = (list: string[]) => list[Math.floor(Math.random() * list.length)]
+	const dataTypes = ['Temperature', 'Pressure', 'Weight', 'Activity'];
+	const randomOfList = (list: string[]) => list[Math.floor(Math.random() * list.length)];
 
-	const dataType = randomOfList(dataTypes)
-	const lastValue = Math.floor(((Math.random() * 30) + 10) * 10) / 10;
+	const dataType = randomOfList(dataTypes);
+	const lastValue = Math.floor((Math.random() * 30 + 10) * 10) / 10;
 	const lastUpdated = Math.floor(Math.random() * 300);
 </script>
-
 
 <div class="badge-container">
 	<div class="heading">
 		<div class="metric">
-			<span>{ dataType }</span>
-			<b>{ lastValue }</b>
+			<span>{dataType}</span>
+			<b>{lastValue}</b>
 		</div>
 
-		<span>{ lastUpdated } mins</span>
+		<span>{lastUpdated} mins</span>
 	</div>
 
 	<div class="meta">
@@ -24,7 +23,6 @@
 </div>
 
 <style lang="scss">
-
 	.badge-container {
 		display: flex;
 		flex-direction: column;
@@ -55,4 +53,3 @@
 		}
 	}
 </style>
-

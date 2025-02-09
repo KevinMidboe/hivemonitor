@@ -16,7 +16,7 @@
 	}
 
 	function handleEnter(event: KeyboardEvent): boolean {
-		if (!(event.code === "Enter" || event.code === "Space")) return false;
+		if (!(event.code === 'Enter' || event.code === 'Space')) return false;
 
 		event.preventDefault();
 		return true;
@@ -34,12 +34,11 @@
 			{#each options as option}
 				<li>
 					<span
-							tabindex="0"
+						tabindex="0"
 						class:active={selected === option}
 						on:click={() => select(option)}
 						on:keydown={(event) => handleEnter(event) && select(option)}
-						role="button"
-							>{option}</span
+						role="button">{option}</span
 					>
 				</li>
 			{/each}
@@ -60,7 +59,6 @@
 		color: var(--color);
 		padding: 10px 15px;
 		border: none;
-		border: 2px solid var(--color);
 		border-radius: 6px;
 		cursor: pointer;
 		display: flex;

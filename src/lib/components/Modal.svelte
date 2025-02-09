@@ -16,17 +16,17 @@
 	function toggleHandler(isOpen: boolean) {
 		if (!browser || !modalElement) return;
 		const app = document.getElementById('app');
-		if (!app) return
+		if (!app) return;
 
 		if (isOpen) {
 			app.classList.add('no-scroll');
 			app.inert = true;
-			app.setAttribute('aria-hidden', 'true')
+			app.setAttribute('aria-hidden', 'true');
 		} else {
 			setTimeout(() => (modalElement.scrollTop = 0), 500);
 			app.classList.remove('no-scroll');
 			app.inert = false;
-			app.setAttribute('aria-hidden', 'false')
+			app.setAttribute('aria-hidden', 'false');
 		}
 	}
 
